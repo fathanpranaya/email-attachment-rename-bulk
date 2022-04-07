@@ -79,12 +79,14 @@ if __name__ == '__main__':
 
     # iterate url_list
     for url in url_list:
-        print(f'[{url.get("email")}]: {url.get("link")}')
-
-        # download the file from url and rename it
+        # get server filename and new file_name using email
         filename = url.get("link").split("/")[-1]
         new_filename = f'{url.get("email")}.{filename.split(".")[-1]}'
-        print(f'Download {filename} -> downloads/{new_filename}')
+        # Print for debugging
+        print(f'Download {url.get("link")} -> downloads/{new_filename}')
+        # HTTP Request
         r = requests.get(url.get("link"))
+        # Store the response
         open(filename, 'wb').write(r.content)
+        # Move the downloaded files to downloads folder
         os.rename(f'{filename}', f'downloads/{new_filename}')
