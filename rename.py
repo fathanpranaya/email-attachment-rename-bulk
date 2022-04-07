@@ -39,9 +39,19 @@ if __name__ == '__main__':
 
             # copy file to output folder
             res = shutil.copy(f'input/{file}', f'output/{new_filename}')
+
+
             print(f'copying file: {res}')
             existing_email.append(new_email)
         else:
             print(f'cannot rename {file}')
 
     print(f'Renaming success: {len(files)} files')
+
+
+
+
+
+
+
+

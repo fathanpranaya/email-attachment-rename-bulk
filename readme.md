@@ -19,7 +19,7 @@ pip install -r requirements.txt
 6. Download Email Attachment From the S/W and put it in the input folder
 7. Run the program
 ```bash
-python3 main.py
+python3 downloader.py
 ```
 8. Check the output folder
 ## 
